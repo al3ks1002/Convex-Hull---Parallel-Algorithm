@@ -100,9 +100,9 @@ class ConvexHullSolver {
 
     if (num_threads == 1) {
       SolveRecursively(low_point, high_point,
-                       left_side, left_convex_hull, num_threads / 2);
+                       left_side, left_convex_hull, 1);
       SolveRecursively(low_point, high_point,
-                       right_side, right_convex_hull, num_threads - num_threads / 2);
+                       right_side, right_convex_hull, 1);
     } else {
       std::thread left_thread(&ConvexHullSolver::SolveRecursively,
                               this,
